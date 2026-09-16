@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cubysig830437"]
 
-[ext_resource type="Script" uid="uid://b6olaoh2rulbd" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cpl5lrdonihki" path="res://addons/main_menu/main_menu.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dwksw2dti8jtj" path="res://container_button.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://f1jrw0ligv3c" path="res://decision_line_edit.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b6olaoh2rulbd" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dwksw2dti8jtj" path="res://scenes/container_button.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cpl5lrdonihki" path="res://addons/main_menu/main_menu.tscn" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://f1jrw0ligv3c" path="res://scripts/decision_line_edit.gd" id="4_o6xl0"]
 
 [node name="Main" type="Node" unique_id=1364036471]
-script = ExtResource("1_0xm2m")
+script = ExtResource("1_jyhfs")
 debug_log_enabled = true
 debug_log_level = 2
-container_button = ExtResource("2_h2yge")
+container_button = ExtResource("2_tbgi4")
 
-[node name="MainMenu" parent="." unique_id=615461231 instance=ExtResource("1_ig7tw")]
+[node name="MainMenu" parent="." unique_id=615461231 instance=ExtResource("3_tefeu")]
 visible = false
 
 [node name="UI" type="Control" parent="." unique_id=1843767731]
@@ -164,7 +164,7 @@ placeholder_text = "<DECISION / TENSION>"
 context_menu_enabled = false
 emoji_menu_enabled = false
 wrap_mode = 1
-script = ExtResource("4_1bvp3")
+script = ExtResource("4_o6xl0")
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer" unique_id=951674260]
 layout_mode = 2
