@@ -237,7 +237,7 @@ func _on_export_pressed() -> void:
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
 	file_dialog.filters = PackedStringArray(["*.json ; JSON Files"])
-	file_dialog.files_selected.connect(_on_export_file_selected)
+	file_dialog.file_selected.connect(_on_export_file_selected)
 	add_child(file_dialog)
 	file_dialog.popup_centered()
 
