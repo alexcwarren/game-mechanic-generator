@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cpl5lrdonihki"]
+
+[ext_resource type="Script" uid="uid://bexcc72oe1njx" path="res://addons/main_menu/main_menu.gd" id="1_60pwc"]
+
+[node name="MainMenu" type="Control" unique_id=1152540032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60pwc")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=912111689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=552308247]
+layout_mode = 2
+theme_override_constants/margin_top = 36
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1349875326]
+layout_mode = 2
+theme_override_constants/separation = 72
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1237609197]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TitleMarginContainer" unique_id=1432037371]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonsCenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1471744502]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsCenterContainer" unique_id=405316401]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsCenterContainer/VBoxContainer" unique_id=201503108]
+unique_name_in_owner = true
+layout_mode = 2
+text = "START"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsCenterContainer/VBoxContainer" unique_id=393420391]
+unique_name_in_owner = true
+layout_mode = 2
+text = "QUIT"

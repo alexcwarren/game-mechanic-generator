@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cubysig830437"]
+
+[ext_resource type="Script" uid="uid://b6olaoh2rulbd" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cpl5lrdonihki" path="res://addons/main_menu/main_menu.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=1364036471]
+script = ExtResource("1_0xm2m")
+debug_log_enabled = true
+
+[node name="MainMenu" parent="." unique_id=615461231 instance=ExtResource("1_ig7tw")]
