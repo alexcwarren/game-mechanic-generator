@@ -20,3 +20,7 @@ export_credentials.cfg
 
 # Godot/editor temporary files
 *.tmp
+
+# Godot exported files
+builds/
+export_presets.cfg
