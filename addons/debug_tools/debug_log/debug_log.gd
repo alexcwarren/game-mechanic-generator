@@ -33,6 +33,10 @@ static func set_level(level: Level) -> void:
 	_level = level
 
 
+static func log_debug(source: Object, message: String) -> void:
+	_log(source, message, Time.get_datetime_string_from_system(), Level.DEBUG)
+
+
 static func log_info(source: Object, message: String) -> void:
 	_log(source, message, Time.get_datetime_string_from_system(), Level.INFO)
 
