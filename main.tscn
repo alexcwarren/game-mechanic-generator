@@ -2,9 +2,286 @@
 
 [ext_resource type="Script" uid="uid://b6olaoh2rulbd" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cpl5lrdonihki" path="res://addons/main_menu/main_menu.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dwksw2dti8jtj" path="res://container_button.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://f1jrw0ligv3c" path="res://decision_line_edit.gd" id="4_1bvp3"]
 
 [node name="Main" type="Node" unique_id=1364036471]
 script = ExtResource("1_0xm2m")
 debug_log_enabled = true
+debug_log_level = 2
+container_button = ExtResource("2_h2yge")
 
 [node name="MainMenu" parent="." unique_id=615461231 instance=ExtResource("1_ig7tw")]
+visible = false
+
+[node name="UI" type="Control" parent="." unique_id=1843767731]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OuterMarginContainer" type="MarginContainer" parent="UI" unique_id=1264636388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer" unique_id=529802546]
+layout_mode = 2
+
+[node name="TopPanelContainer" type="PanelContainer" parent="UI/OuterMarginContainer/VBoxContainer" unique_id=604648631]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer" unique_id=324623174]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer" unique_id=46629207]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer" unique_id=1785617018]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+theme_override_constants/separation = 16
+
+[node name="VerbVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=276255066]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VerbLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VerbVBoxContainer" unique_id=2145999552]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "The player must
+"
+autowrap_mode = 2
+
+[node name="VerticalSpacer" type="Control" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VerbVBoxContainer" unique_id=200200766]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VerbCheckButton" type="CheckButton" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VerbVBoxContainer" unique_id=1871170137]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ConstraintVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2120469159]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ConstraintLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConstraintVBoxContainer" unique_id=37269090]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "while
+"
+autowrap_mode = 2
+
+[node name="VerticalSpacer" type="Control" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConstraintVBoxContainer" unique_id=1511433333]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConstraintCheckButton" type="CheckButton" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConstraintVBoxContainer" unique_id=95522316]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PressureVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=440002552]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PressureLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PressureVBoxContainer" unique_id=1396053691]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "as
+"
+autowrap_mode = 2
+
+[node name="VerticalSpacer" type="Control" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PressureVBoxContainer" unique_id=34175451]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PressureCheckButton" type="CheckButton" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PressureVBoxContainer" unique_id=1089654485]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GoalVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=365018777]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="GoalLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GoalVBoxContainer" unique_id=1021609079]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "in order to
+"
+autowrap_mode = 2
+
+[node name="VerticalSpacer" type="Control" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GoalVBoxContainer" unique_id=1998355157]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GoalCheckButton" type="CheckButton" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GoalVBoxContainer" unique_id=1717402093]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VerticalSpacer" type="Control" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer" unique_id=240282483]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DecisionTextEdit" type="TextEdit" parent="UI/OuterMarginContainer/VBoxContainer/TopPanelContainer/MarginContainer/VBoxContainer" unique_id=1650963489]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+placeholder_text = "<DECISION / TENSION>"
+context_menu_enabled = false
+emoji_menu_enabled = false
+wrap_mode = 1
+script = ExtResource("4_1bvp3")
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer" unique_id=951674260]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RandomizeButton" type="Button" parent="UI/OuterMarginContainer/VBoxContainer/ButtonsContainer" unique_id=1840225185]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Randomize"
+
+[node name="ExportButton" type="Button" parent="UI/OuterMarginContainer/VBoxContainer/ButtonsContainer" unique_id=581929500]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Export"
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="UI/OuterMarginContainer/VBoxContainer" unique_id=1773904814]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer" unique_id=1658206708]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VerbOuterVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer" unique_id=562690835]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/VerbOuterVBoxContainer" unique_id=2008635956]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/VerbOuterVBoxContainer/PanelContainer" unique_id=1689469283]
+layout_mode = 2
+text = "VERB"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/VerbOuterVBoxContainer" unique_id=1673666807]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_vertical_custom_step = 2.0
+
+[node name="VerbContainer" type="HFlowContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/VerbOuterVBoxContainer/ScrollContainer" unique_id=579179148]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConstraintOuterVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer" unique_id=1652333493]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/ConstraintOuterVBoxContainer" unique_id=903657863]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/ConstraintOuterVBoxContainer/PanelContainer" unique_id=1395565833]
+layout_mode = 2
+text = "CONSTRAINT"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/ConstraintOuterVBoxContainer" unique_id=1850046141]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_vertical_custom_step = 2.0
+
+[node name="ConstraintContainer" type="HFlowContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/ConstraintOuterVBoxContainer/ScrollContainer" unique_id=304084238]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PressureOuterVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer" unique_id=1130730701]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/PressureOuterVBoxContainer" unique_id=1975640169]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/PressureOuterVBoxContainer/PanelContainer" unique_id=1340152593]
+layout_mode = 2
+text = "PRESSURE"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/PressureOuterVBoxContainer" unique_id=1095738650]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_vertical_custom_step = 2.0
+
+[node name="PressureContainer" type="HFlowContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/PressureOuterVBoxContainer/ScrollContainer" unique_id=2100997070]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoalOuterVBoxContainer" type="VBoxContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer" unique_id=390070032]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/GoalOuterVBoxContainer" unique_id=512869676]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/GoalOuterVBoxContainer/PanelContainer" unique_id=546139206]
+layout_mode = 2
+text = "GOAL"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/GoalOuterVBoxContainer" unique_id=1435826151]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+scroll_vertical_custom_step = 2.0
+
+[node name="GoalContainer" type="HFlowContainer" parent="UI/OuterMarginContainer/VBoxContainer/BottomMarginContainer/HBoxContainer/GoalOuterVBoxContainer/ScrollContainer" unique_id=1671803100]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
