@@ -1,0 +1,27 @@
+name: Godot Project Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    container:
+      image: barichello/godot-ci:4.5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Import project
+        run: godot --headless --path . --import
+
+      - name: Launch project briefly
+        run: godot --headless --path . --quit-after 1
