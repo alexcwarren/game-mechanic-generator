@@ -1,0 +1,42 @@
+name: Feature Request
+description: Suggest an improvement or new capability
+title: "[Enhancement]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement.
+
+        Please focus on the problem or workflow you want to improve.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: What problem would this feature solve?
+      placeholder: Describe the limitation, friction, or opportunity.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Improvement
+      description: What would you like the application to do?
+      placeholder: Describe the behavior or feature you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Are there other ways this could be solved?
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add examples, mockups, screenshots, or related ideas here.
