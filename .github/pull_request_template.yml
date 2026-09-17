@@ -1,0 +1,18 @@
+## Summary
+
+Describe what changed and why.
+
+## Related Issue
+
+Closes #
+
+## Testing
+
+Describe how you verified the changes.
+
+## Checklist
+
+- [ ] I tested the affected functionality
+- [ ] I updated documentation if needed
+- [ ] I did not commit build artifacts
+- [ ] The project still runs without errors
